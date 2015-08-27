@@ -5,4 +5,6 @@ Include the <b>ParsingTable.h</b> file in your project and call the <b>Generate<
 
 For instruction on how to use the files please see the link below:
 <link>http://jtech-online.com/?page_id=417</link>
+# License
 
+[The MIT License (MIT)](http://opensource.org/licenses/MIT)
