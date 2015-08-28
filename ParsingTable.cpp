@@ -102,7 +102,7 @@ int **Generate(int **__Grammer, int* __Rows, int __RowCount, int __TerminalCount
 	return _output;
 }
 
-//Returns the __ItemIndex'th item of the produciton specified by __RowIndex
+//Returns the __ItemIndex'th item of the produciton specified by __RowIndex. Returns -1 if not found
 int GetItemInProduction(int **__Grammer, int __RowIndex, int __ColumnCount, int __ItemIndex){
 	for (int i =0; i <__ColumnCount; i++){
 		if (__Grammer[__RowIndex][i] == __ItemIndex){
@@ -246,6 +246,23 @@ void SetFirstAs(int **__Grammer, int* __Rows, int __RowCount, int __TerminalCoun
 	}
 	
 		
+}
+
+//returns an array with the production items in the selected row of the grammer in the order they appear in the production. 
+//The array will be terminated with a "-1"
+//__Grammer: Grammer matrix
+//__rowIndex: Production row to return
+//__countColumns: Columns in grammer matrix
+int * GetProduction(int **__Grammer, int __rowIndex, int __countColumns){
+	int *_output = (int *)malloc(sizeof(int)*__countColumns);
+	for (int i = 0; i < __countColumns; i++){
+		_output[i] = GetItemInProduction(__Grammer, __rowIndex, __countColumns, i);
+		if (_output[i] ==-1){
+			break;
+		}
+	}
+
+	return _output;
 }
 
 
