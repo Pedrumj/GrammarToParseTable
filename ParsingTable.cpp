@@ -253,11 +253,13 @@ void SetFirstAs(int **__Grammer, int* __Rows, int __RowCount, int __TerminalCoun
 //__Grammer: Grammer matrix
 //__rowIndex: Production row to return
 //__countColumns: Columns in grammer matrix
-int * GetProduction(int **__Grammer, int __rowIndex, int __countColumns){
+//__countOutput: The number of valid indices in the output
+int * GetProduction(int **__Grammer, int __rowIndex, int __countColumns, int *__countOutput){
 	int *_output = (int *)malloc(sizeof(int)*__countColumns);
 	for (int i = 0; i < __countColumns; i++){
 		_output[i] = GetItemInProduction(__Grammer, __rowIndex, __countColumns, i);
 		if (_output[i] ==-1){
+			*__countOutput = i;
 			break;
 		}
 	}

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 //Generates a parsing table for an input LL(1) grammer. See documentation for details on how to call the function
 
-
+// a linked list of terminals/nonterminals
 struct TerList{
 	struct TerList *Next;
 	int Value;
