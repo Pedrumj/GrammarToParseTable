@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "TerList.h"
 #include <Windows.h>
-#include "Matrix.h"
+
 
 //Generates a parsing table for an input LL(1) grammer. See documentation for details on how to call the function
 
